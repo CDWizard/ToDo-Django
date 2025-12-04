@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f5f5f5;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .profile-card {
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 40px;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+      }
+
+      .profile-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #2563eb;
+        margin-bottom: 20px;
+      }
+
+      .profile-name {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 5px;
+      }
+
+      .profile-title {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      .profile-details {
+        text-align: left;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+      }
+
+      .detail-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .detail-row:last-child {
+        border-bottom: none;
+      }
+
+      .detail-label {
+        font-size: 14px;
+        color: #666;
+        font-weight: 500;
+      }
+
+      .detail-value {
+        font-size: 14px;
+        color: #333;
+      }
+
+      .profile-actions {
+        margin-top: 25px;
+        display: flex;
+        gap: 10px;
+      }
+
+      .btn {
+        flex: 1;
+        padding: 12px 20px;
+        font-size: 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        text-align: center;
+      }
+
+      .btn-primary {
+        background-color: #2563eb;
+        color: #ffffff;
+        border: none;
+      }
+
+      .btn-primary:hover {
+        background-color: #1d4ed8;
+      }
+
+      .btn-secondary {
+        background-color: #ffffff;
+        color: #333;
+        border: 1px solid #ddd;
+      }
+
+      .btn-secondary:hover {
+        background-color: #f5f5f5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="profile-card">
+      <img
+        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+        alt="User Profile Picture"
+        class="profile-image"
+      />
+
+      <h1 class="profile-name">{{ name | upper }}</h1>
+      <p class="profile-title">{{ designation }}</p>
+
+      <div class="profile-details">
+        <div class="detail-row">
+          <span class="detail-label">Email</span>
+          <span class="detail-value">{{ email | lower }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Phone</span>
+          <span class="detail-value">{{ phone }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Location</span>
+          <span class="detail-value">{{ location }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Member Since</span>
+          <span class="detail-value">{{ since | default:'Not Defined' }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Call Me</span>
+          <span class="detail-value"
+            >{% if is_male %}Male{% else %}Female{% endif %}</span
+          >
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Skills</span>
+          {% for value in skills %}<span class="detail-value">{{ value }}</span
+          >{% endfor %}
+        </div>
+      </div>
+      <div class="profile-actions">
+        <a href="auth.html" class="btn btn-secondary">Logout</a>
+        <button class="btn btn-primary">Edit Profile</button>
+      </div>
+    </div>
+  </body>
+</html>
