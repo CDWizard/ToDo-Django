@@ -23,3 +23,9 @@
 - Variables
 - Tags
 - Filters
+
+### URL Handling, Include Tag & Template Inheritance in Django
+
+- How to handle URLs in Django
+- How to use include tag in Django
+- How to use Template Inheritance in Django
