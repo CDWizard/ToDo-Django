@@ -16,20 +16,7 @@
     style="display: flex; gap: 10px"
     enctype="multipart/form-data"
   >
-    {% csrf_token %}
-    <input
-      type="text"
-      placeholder="Add a task..."
-      name="task"
-      required
-      style="
-        flex: 1;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        outline: none;
-      "
-    />
+    {% csrf_token %} {{ form.title }}
     <button
       type="submit"
       style="
@@ -45,4 +32,13 @@
     </button>
   </form>
 </div>
+<style>
+  #todo-title-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+  }
+</style>
 {% endblock %}

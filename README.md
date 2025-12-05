@@ -47,3 +47,16 @@
   ```
 - todo create query
 - todo read query
+
+### Django Admin, Shell
+
+- Create superuser in Django
+  ```
+    python manage.py createsuperuser
+  ```
+
+```
+  python manage.py shell
+```
+
+- ModelForm in Django
