@@ -31,5 +31,19 @@
 - How to use Template Inheritance in Django
 
 ### Managing Static Files in Django
+
 - How to manage static files in Django
 - Form handle in Django
+
+### ORM(Object Relation Model) and MVT(Model View Template) in Django
+
+- Create a model in Django
+- Migrate a model in Django
+  ```
+    python manage.py makemigrations
+  ```
+  ```
+    python manage.py migrate
+  ```
+- todo create query
+- todo read query

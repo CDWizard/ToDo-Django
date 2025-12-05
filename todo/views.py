@@ -1,12 +1,17 @@
 from django.shortcuts import render
+from .models import Todo
 
 def create(request):
     if request.POST:
-        print(request.POST.get('task'))
+        title=request.POST.get('task')
+        todo=Todo(title=title)
+        todo.save()
     return render(request, 'create.html')
 
 def list(request):
-    return render(request, 'list.html')
+    todos=Todo.objects.all()
+    print(todos)
+    return render(request, 'list.html', {'todos': todos})
 
 def edit(request):
     return render(request, 'edit.html')

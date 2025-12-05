@@ -1,3 +1,41 @@
 {% extends 'blank_layout.html' %} {% block content %}
-<h1>List</h1>
+<div>
+  <h1>Task Lists</h1>
+  <div>
+    {% for todo in todos %}
+    <ul
+      style="
+        margin-top: 20px;
+        list-style: none;
+        padding: 0;
+        list-style-type: none;
+      "
+    >
+      <li
+        style="
+          padding: 12px;
+          background: #f7f7f7;
+          margin-bottom: 8px;
+          border-radius: 8px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        {{ todo.title}}
+        <button
+          style="
+            background: #ef4444;
+            padding: 6px 10px;
+            border-radius: 6px;
+            margin: 1rem;
+          "
+        >
+          Delete
+        </button>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
 {% endblock %}
