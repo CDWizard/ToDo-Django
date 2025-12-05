@@ -1,3 +1,48 @@
 {% extends 'blank_layout.html' %} {% block content %}
-<h1>Create</h1>
+<div
+  class="container"
+  style="
+    background: #fff;
+    width: 400px;
+    margin-top: 60px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  "
+>
+  <h2 style="margin: 0 0 15px; text-align: center">Create To-Do</h2>
+  <form
+    method="post"
+    style="display: flex; gap: 10px"
+    enctype="multipart/form-data"
+  >
+    {% csrf_token %}
+    <input
+      type="text"
+      placeholder="Add a task..."
+      name="task"
+      required
+      style="
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+      "
+    />
+    <button
+      type="submit"
+      style="
+        padding: 10px 16px;
+        background: #4f46e5;
+        border: none;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+      "
+    >
+      Add
+    </button>
+  </form>
+</div>
 {% endblock %}

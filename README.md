@@ -29,3 +29,7 @@
 - How to handle URLs in Django
 - How to use include tag in Django
 - How to use Template Inheritance in Django
+
+### Managing Static Files in Django
+- How to manage static files in Django
+- Form handle in Django

@@ -1,6 +1,8 @@
 from django.shortcuts import render
 
 def create(request):
+    if request.POST:
+        print(request.POST.get('task'))
     return render(request, 'create.html')
 
 def list(request):
