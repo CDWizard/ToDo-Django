@@ -60,3 +60,8 @@
 ```
 
 - ModelForm in Django
+
+### Edit and Delete operations Python Django
+
+- Implement Edit operation in Django
+- Implement Delete operation in Django

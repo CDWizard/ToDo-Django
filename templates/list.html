@@ -23,16 +23,30 @@
         "
       >
         {{ todo.title}}
-        <button
+        <a
+          href="{% url 'edit' todo.id %}"
           style="
-            background: #ef4444;
+            background: #a0ff7a;
             padding: 6px 10px;
             border-radius: 6px;
             margin: 1rem;
+            text-decoration: none;
+          "
+        >
+          Edit
+        </a>
+        <a
+          href="{% url 'delete' todo.id %}"
+          style="
+            background: #ff6e6e;
+            padding: 6px 10px;
+            border-radius: 6px;
+            margin: 1rem;
+            text-decoration: none;
           "
         >
           Delete
-        </button>
+        </a>
       </li>
       {% endfor %}
     </ul>
