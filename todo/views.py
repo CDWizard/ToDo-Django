@@ -4,7 +4,7 @@ from .forms import TodoForm
 
 def create(request):
     if request.POST:
-        todoForm = TodoForm(request.POST)
+        todoForm = TodoForm(request.POST, request.FILES)
         if todoForm.is_valid():
             todoForm.save()
     else:

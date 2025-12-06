@@ -22,7 +22,12 @@
           align-items: center;
         "
       >
-        {{ todo.title}}
+        <p>{{ todo.title}}</p>
+        <img
+          src="{{ todo.image.url }}"
+          alt="{{ todo.title}}"
+          style="width: 50px; height: 50px"
+        />
         <a
           href="{% url 'edit' todo.id %}"
           style="

@@ -13,10 +13,19 @@
   <h2 style="margin: 0 0 15px; text-align: center">Create To-Do</h2>
   <form
     method="post"
-    style="display: flex; gap: 10px"
+    style="display: flex; gap: 10px; justify-content: center;"
     enctype="multipart/form-data"
   >
-    {% csrf_token %} {{ form.title }}
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+      "
+    >
+      {% csrf_token %} {{ form.title }} {{ form.image }}
+    </div>
     <button
       type="submit"
       style="
