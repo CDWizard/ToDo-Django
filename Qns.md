@@ -1,0 +1,1 @@
+- [ ] How Django generate migration files automatically

@@ -69,3 +69,6 @@
 ### Use PostgreSQL Database Django
 
 - Use PostgreSQL database in Django
+
+
+### ORM Relations Python Django
