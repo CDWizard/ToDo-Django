@@ -12,8 +12,11 @@ def create(request):
     return render(request, 'create.html', {'form': todoForm})
 
 def list(request):
+    visits = int(request.COOKIES.get('visits', 0))
     todos=Todo.objects.all()
-    return render(request, 'list.html', {'todos': todos})
+    response = render(request, 'list.html', {'todos': todos, 'visits': visits})
+    response.set_cookie('visits', visits + 1, secure=True, httponly=True)
+    return response
 
 def edit(request, id):
     instance = Todo.objects.get(pk=id)

@@ -72,3 +72,7 @@
 
 
 ### ORM Relations Python Django
+
+
+### Cookies in Python Django
+- Use cookies in Django by defining the cookies in the client side and access them in the server side
